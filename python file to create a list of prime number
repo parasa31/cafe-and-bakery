@@ -1,0 +1,30 @@
+to creat vi text file --->
+vi prime
+###After opening the vi txet file 
+start = 1
+upper = 250
+# To store the prime numbers create a list prime_number
+prime_number=[]
+ 
+#Change the flag variable to False, when the number is exactly divisible.
+#finally check the flag value, if it is true the given number is not divisible by any number, so the number is
+#prime number and we are adding in the list prime_number
+for x in range(start, upper+1):
+    flag = True
+    for i in range(2, x):
+        if (x % i == 0):
+            flag = False
+            break
+ 
+    if flag == True:
+        prime_number.append(x)
+ 
+print(prime_number)
+ 
+#to write the result in file named results.txt
+with open('results.txt', 'w') as f:
+    f.write(str(prime_number))
+##to exit the vi file typE ESC key  :wq
+ 
+###to see the output
+python3 prime
